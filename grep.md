@@ -5,4 +5,5 @@ grep is a powerful command-line search tools that is one of the most useful tool
 At the most basic level, grep searches for a string of characters that match a pattern and will print lines containing a match. 
 
 ## Basic syntax
+	
 	grep 'pattern' file_to_search
