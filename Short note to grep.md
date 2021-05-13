@@ -1,5 +1,5 @@
 
-# Short note to grep
+# grep
 
 grep(`g`lobally search a `r`egular `e`xpression and `p`rint) is a powerful command-line search tools that is one of the most useful tools in bioinformatics.
 At the most basic level, grep searches for a string of characters that match a pattern and will print lines containing a match. 
