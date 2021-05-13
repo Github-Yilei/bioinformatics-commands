@@ -1,7 +1,10 @@
 # bioinformatics-commands
-This repository provides useful tips for using command-line tools for bioinformatics.
 
-## 
+This repository is a collection of the one line commands that was used in my daily work. I think it would be more repeatable if I add some comments.
 
-it's a collection of one line command that was used in my daily work, so basically it will be keep updating.
+## reference
 
+https://bioinformaticsworkbook.org/Appendix/Unix/unix-basics-3grep.html
+https://bioinformaticsworkbook.org/Appendix/Unix/unix-basics-4sed.html
+https://github.com/crazyhottommy/bioinformatics-one-liners
+https://www.biostars.org/p/142545/
