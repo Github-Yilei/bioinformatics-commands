@@ -47,10 +47,10 @@ If there are multi-matches on one line, option `grep -c` would still print the n
 	## print line number followed by number of times
 	grep -on "PATTERN" FILENAME | cut -f 1 -d ":" | sort | uniq -c
 	
-## 获得符合条件的行/文件名
+## Finding the match files
 
-对于报错或者其他场景，我们往往想要知道关键信息所在的行的情况，或者某路径下符合/不符合条件的文件有那些。
-
+When dealing with multiple files, the `-r` option will recursively searche the subset files.
+	## printing the matching line
 	grep -r PATTERN FILENAME
 
 	## printing the matching filename
@@ -59,9 +59,9 @@ If there are multi-matches on one line, option `grep -c` would still print the n
 	## printing the NOT matching filename
 	grep -rL PATTERN path
 	
-## 获取前/后几行
+## Print lines before or after the matching term
 
-通过`-B` (for before) 和 `-A` (for after) 参数，很容易获得符合条件的PATTERN所在的前后几行的信息。
+With `-B`(for before) and `-A`(for after), we can specify the number of lines that we want to get.
 
 	# before
 	grep -B 10 "PATTERN" FILENAME
@@ -71,3 +71,11 @@ If there are multi-matches on one line, option `grep -c` would still print the n
 
 	# combine 
 	grep -B 10 -A 10 "PATTERN" FILENAME
+## Search a motif
+
+	grep --color "ATGC" test.fa
+
+##  dealling with blank lines
+In the regex rule, the `^` marks the beginning of a line, while `$` marks the end.
+
+	grep "^$" FILENAME
