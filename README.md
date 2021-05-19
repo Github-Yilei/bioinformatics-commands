@@ -13,3 +13,6 @@ This repository is a collection of the one line commands that was used in my dai
 4. https://www.biostars.org/p/142545/
 
 5. https://www.grymoire.com/Unix/Sed.html#uh-47
+
+
+qselect -u stu_wuyilei | xargs qdel -W force
