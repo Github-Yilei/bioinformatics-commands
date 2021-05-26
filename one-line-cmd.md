@@ -46,3 +46,6 @@ paste file1 file2
 # link
 
 unlink
+
+# grep + rm
+	rm `ls | grep -v [1-2].fq`
