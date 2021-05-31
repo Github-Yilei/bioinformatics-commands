@@ -9,8 +9,8 @@ paste file1 file2
 unlink
 
 # grep + rm
+	
 	rm `ls | grep -v [1-2].fq`
-
 
 ## Sequence length
 
