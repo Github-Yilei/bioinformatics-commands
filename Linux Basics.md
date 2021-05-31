@@ -36,16 +36,3 @@
 9.  view the environment
 
 		printenv
-		
-# combine files
-
-cat file1 file2
-
-paste file1 file2
-
-# link
-
-unlink
-
-# grep + rm
-	rm `ls | grep -v [1-2].fq`
