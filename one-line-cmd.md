@@ -1,14 +1,32 @@
 ## Combine files
 
-cat file1 file2
+Combine multi fa files useing cat. 
 
-paste file1 file2
+```
+cat sample_names | xargs -i cat {} > combied.fa
 
-# link
+ls | grep "fa" | awk 'NR<=50 {print $1}' | xargs -i cat {} > combied_50.fa
+```
+1. xargs -i = xargs -I {}: Replace {} with the parameters from standard input line by line.
+2. cat {}: `{}` contain the samples name.
+3. test1: cat sample_names | xargs -i echo {}
+4. test2: cat sample_names | xargs -I {} echo {}
+5. test3: cat sample_names | xargs echo
 
-unlink
 
-# grep + rm
+## link
+
+Create and remove a link to TARGET with the name LINK_NAME.
+
+```
+# make symbolic links instead of hard links
+ln -s fil1 file2
+
+# unlink
+unlink file2
+```
+
+## grep + rm
 	
 	rm `ls | grep -v [1-2].fq`
 
