@@ -61,8 +61,10 @@ awk 'NR%2 == 0 {lengths[length($0)]++} END {for (l in lengths) {print "filename"
 2. reorder the samples accoding to the random numbers above.
 3. selectting samples.
 
-	awk 'BEGIN{srand(13)} {print rand()"\t"$0}' sample_list |  sort -k1 -n | awk 'NR<=5 {print $2}'
-	
+```
+awk 'BEGIN{srand(13)} {print rand()"\t"$0}' sample_list |  sort -k1 -n | awk 'NR<=5 {print $2}'
+```	
+
 1. srand(13): set.seed=13, the program will generates the same results each time with same seed. 
 2. srand() will result in the different random numbers in each run.
 3. rand(): generating random numbers.
