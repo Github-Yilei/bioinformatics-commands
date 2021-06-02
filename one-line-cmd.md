@@ -63,6 +63,9 @@ awk 'NR%2 == 0 {lengths[length($0)]++} END {for (l in lengths) {print "filename"
 
 ```
 awk 'BEGIN{srand(13)} {print rand()"\t"$0}' sample_list |  sort -k1 -n | awk 'NR<=5 {print $2}'
+
+# step=10, group=5
+for i in {1..5}; do awk 'BEGIN{srand(13)} {print rand()"\t"$0}' sample_list |  sort -k1 -n | awk '10*("'${i}'"-1)<NR && NR<=10*"'$i'" {print $2}'; done
 ```	
 
 1. srand(13): set.seed=13, the program will generates the same results each time with same seed. 
