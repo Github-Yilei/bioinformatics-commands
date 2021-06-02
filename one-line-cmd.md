@@ -14,7 +14,7 @@ ls | grep "fa" | awk 'NR<=50 {print $1}' | xargs -i cat {} > combied_50.fa
 5. test3: cat sample_names | xargs echo
 
 
-## link
+## Link
 
 Create and remove a link to TARGET with the name LINK_NAME.
 
@@ -26,7 +26,7 @@ ln -s fil1 file2
 unlink file2
 ```
 
-## grep + rm
+## Grep + Rm
 	
 	rm `ls | grep -v [1-2].fq`
 
@@ -36,7 +36,7 @@ Return sequence length of every entry in a multi-fasta file and build a entry ta
 
 	awk '/^>/ {if (seqlen){print seqlen}; print ;seqlen=0;next; } { seqlen = seqlen +length($0)}END{print seqlen}' test.fa |  paste - -
 	
-## distribution of sequence length
+## Distribution of sequence length
 
 Return the distribution of sequence length in a multi-fasta file and build a table.
 
@@ -54,4 +54,15 @@ awk 'NR%2 == 0 {lengths[length($0)]++} END {for (l in lengths) {print l, lengths
 # put file name in the table for plot 
 awk 'NR%2 == 0 {lengths[length($0)]++} END {for (l in lengths) {print "filename", l, lengths[l]}}' test.fa | paste - - 
 ```
+
+## Randomly group/select samples
+
+1. generating random numbers with `awk rand()`. 
+2. reorder the samples accoding to the random numbers above.
+3. selectting samples.
+
+	awk 'BEGIN{srand(13)} {print rand()"\t"$0}' sample_list |  sort -k1 -n | awk 'NR<=5 {print $2}'
 	
+1. srand(13): set.seed=13, the program will generates the same results each time with same seed. 
+2. srand() will result in the different random numbers in each run.
+3. rand(): generating random numbers.
