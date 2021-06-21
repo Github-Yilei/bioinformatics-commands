@@ -2,7 +2,7 @@
 
 1. Single quotation(' '): in single quotation marks, all characters, including special characters (`$`, `’`, `‘`, and `\`) are interpreted as characters themselves and become ordinary characters.
 
-2. Back quotation(` `): the string in the back quote will be interpreted as a shell command to execute.
+2. Back quotation(/` /`): the string in the back quote will be interpreted as a shell command to execute.
 
 3. Double quotation(" "): `$`, `‘`, `’`, `!`, and `\` in double quotation marks will be evaluated before display.
 
