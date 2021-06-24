@@ -1,6 +1,5 @@
 # bioinformatics-commands
-
-This repository is a collection of the one line commands that was used in my daily work. I think it would be more repeatable if I add some comments.
+A place to gather useful shell commands I keep on forgetting. I find it would be more repeatable if I add some comments.
 
 ## reference
 
