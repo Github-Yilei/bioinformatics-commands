@@ -71,3 +71,11 @@ for i in {1..5}; do awk 'BEGIN{srand(13)} {print rand()"\t"$0}' sample_list |  s
 1. srand(13): set.seed=13, the program will generates the same results each time with same seed. 
 2. srand() will result in the different random numbers in each run.
 3. rand(): generating random numbers.
+
+## return absence record
+
+Checking and returning the absence itmes according to the 2ed file.
+
+```
+awk 'NR==FNR{file1[$0]} NR>FNR{if(!($1 in file1)) print $0}' blastn_uniq.txt Mummer_Unqry.list > whole_UnHit.list
+```
