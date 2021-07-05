@@ -82,3 +82,16 @@ awk 'NR==FNR{file1[$0]} NR>FNR{if(!($1 in file1)) print $0}' blastn_uniq.txt Mum
 
 1. NR==FNR means `awk` are working with 1st file, then saving whole line of 1st file (`$0`) to 'file1';
 2. FNR will equal to 0 while 2ed file are opend which means NR>FNR is true, then check if `$1` in `file` and print to screen while return true. 
+
+## md5sum
+
+Error: md5sum: 'xxxx.gz $'\r': No such file or directory
+		'FAILED open or read xxxx.gz'
+
+```
+# show-all information
+cat -A md5.txt
+
+# global (default) 
+sed 's#\r##' md5.txt | md5sum -c -
+```
