@@ -79,3 +79,6 @@ Checking and returning the absence itmes according to the 2ed file.
 ```
 awk 'NR==FNR{file1[$0]} NR>FNR{if(!($1 in file1)) print $0}' blastn_uniq.txt Mummer_Unqry.list > whole_UnHit.list
 ```
+
+1. NR==FNR means `awk` are working with 1st file, then saving whole line of 1st file (`$0`) to 'file1';
+2. FNR will equal to 0 while 2ed file are opend which means NR>FNR is true, then check if `$1` in `file` and print to screen while return true. 
