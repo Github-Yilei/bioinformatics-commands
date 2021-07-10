@@ -112,5 +112,5 @@ zcat test_1.fq.gz | awk 'NR <= clean_lines {print}' > test_1.fq
 zcat test_2.fq.gz | awk 'NR <= clean_lines {print}' > test_2.fq
 
 ## with sed
-sed -n '1,1000p'  test_1.fq.gz > test_1.fq
+sed -n '1,1000p' test_1.fq.gz > test_1.fq
 ```
