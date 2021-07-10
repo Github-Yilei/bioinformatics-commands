@@ -34,8 +34,10 @@ unlink file2
 
 Return sequence length of every entry in a multi-fasta file and build a entry table.
 
-	awk '/^>/ {if (seqlen){print seqlen}; print ;seqlen=0;next; } { seqlen = seqlen +length($0)}END{print seqlen}' test.fa |  paste - -
-	
+```
+awk '/^>/ {if (seqlen){print seqlen}; print ;seqlen=0;next; } { seqlen = seqlen +length($0)}END{print seqlen}' test.fa |  paste - -
+```	
+
 ## Distribution of sequence length
 
 Return the distribution of sequence length in a multi-fasta file and build a table.
@@ -94,4 +96,16 @@ cat -A md5.txt
 
 # global (default) 
 sed 's#\r##' md5.txt | md5sum -c -
+```
+
+## Corrupted fastq file
+
+**message**: FastQC.Sequence.SequenceFormatException: ID line didn't start with '@'
+
+```
+zcat test.fq.gz | awk 'NR%4 == 1 {print }' > test_ID_line.txt
+awk '{if($1~/^@/) print $1; else exit}' test_ID_line.txt > cleaned_test_ID_line.txt
+
+cat clean.txt | echo $((`wc -l`*4))
+zcat YZ180.C_1.fq.gz | awk 'NR <= 69891452 {print }' > clean_fq
 ```
