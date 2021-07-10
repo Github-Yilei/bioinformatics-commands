@@ -108,6 +108,9 @@ zcat test_1.fq.gz | awk 'NR%4==1{if($1~/^@/) print $1; else exit}' >test_1_id.tx
 # return clean lines
 cat test_1_id.txt | echo $((`wc -l`*4 - 1))
 # return clean fastq1
-zcat test_1.fq.gz | awk 'NR <= clean_lines {print }' > test_1.fq
-zcat test_2.fq.gz | awk 'NR <= clean_lines {print }' > test_2.fq
+zcat test_1.fq.gz | awk 'NR <= clean_lines {print}' > test_1.fq
+zcat test_2.fq.gz | awk 'NR <= clean_lines {print}' > test_2.fq
+
+## with sed
+sed -n '10,clean_lines'  test_1.fq.gz > test_1.fq
 ```
