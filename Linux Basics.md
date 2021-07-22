@@ -44,3 +44,12 @@
 9.  view the environment
 
 		printenv
+10. Protable Batch System
+
+```
+# kill jobs according to user
+qselect -u yilei | xargs qdel -W force
+
+# kill jobs according to job
+ps -ef | grep job_names | awk '{print $2}' | xargs kill -9
+```
