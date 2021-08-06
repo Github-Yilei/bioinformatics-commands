@@ -114,3 +114,10 @@ zcat test_2.fq.gz | awk 'NR <= clean_lines {print}' > test_2.fq
 ## with sed
 sed -n '1,1000p' test_1.fq.gz > test_1.fq
 ```
+
+
+## split the report of quast
+
+```
+sed "s/\t/index/" quast_out/report.tsv  | awk -Findex '{print $2}'
+```
