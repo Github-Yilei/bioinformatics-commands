@@ -98,7 +98,7 @@ cat -A md5.txt
 sed 's#\r##' md5.txt | md5sum -c -
 ```
 
-## Corrupted fastq file
+## Check Corrupted fastq file
 
 **message**: FastQC.Sequence.SequenceFormatException: ID line didn't start with '@'
 
@@ -120,4 +120,12 @@ sed -n '1,1000p' test_1.fq.gz > test_1.fq
 
 ```
 sed "s/\t/index/" quast_out/report.tsv  | awk -Findex '{print $2}'
+```
+
+## extract flagstat and make a tsv
+
+The result of samtools flagstat were saved into a file (MapStatistics).
+
+```
+ls MapStatistics | while read name; do awk 'BEGIN{print "'${name}'"}; {print $1}' MapStatistics/${name} | paste - - - - - - - - - - - - - - ; done > flagstat
 ```
