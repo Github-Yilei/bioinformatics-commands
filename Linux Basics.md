@@ -6,13 +6,12 @@
 
 3. Double quotation(" "): `$`, `‘`, `’`, `!`, and `\` in double quotation marks will be evaluated before display.
 
-## shell
+## Shell
 
 This option applies to the shell environment and each subshell environment separately, and may cause shells to exit before executing all the commands in the subshell while one of the command return 'error'.
 
 ```
 set -e 
-
 ```
 
 ## System and Memory
@@ -53,15 +52,13 @@ set -e
 9.  view the environment
 
 		printenv
-10. Protable Batch System
+		
+## Protable Batch System
 
 ```
-
-## kill jobs according to user
-```
+# kill jobs according to user
 qselect -u yilei | xargs qdel -W force
-```
+
 # kill jobs according to job
-```
 ps -ef | grep job_names | awk '{print $2}' | xargs kill -9
 ```
