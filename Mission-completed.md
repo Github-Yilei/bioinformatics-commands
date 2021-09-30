@@ -129,3 +129,11 @@ The result of samtools flagstat were saved into a file (MapStatistics).
 ```
 ls MapStatistics | while read name; do awk 'BEGIN{print "'${name}'"}; {print $1}' MapStatistics/${name} | paste - - - - - - - - - - - - - - ; done > flagstat
 ```
+
+## rename
+
+```
+rename old new target.old
+
+# return  target.new
+```
