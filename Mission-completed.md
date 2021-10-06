@@ -137,3 +137,9 @@ rename old new target.old
 
 # return  target.new
 ```
+
+## sort and uniq according to specific col
+
+```
+awk '{print $1 "\t" $7}' specific.blast | sort -u -k 2 | sort -u -k 1,1 > sorted_uniq.blast
+```
