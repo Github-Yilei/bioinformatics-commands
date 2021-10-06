@@ -138,12 +138,19 @@ rename old new target.old
 # return  target.new
 ```
 
-## sort and uniq according to specific col
+## sort and uniq according to specific col(1,1)
+
+![image](https://user-images.githubusercontent.com/82864917/136163838-042af6c7-3df1-4be5-9e70-e3bc9e13c7f4.png)
 
 ```
 awk '{print $1 "\t" $7}' specific.blast | sort -u -k 2 | sort -u -k 1,1 > sorted_uniq.blast
 ```
+
 ## awk and sub(gsub）
 
-1. sub match the first pattern, sed 's//'
-2. gsub match all of the pattern, sed 's//g' 。 
+1. sub match the first words, sed 's//'
+2. gsub match all of the words, sed 's//g' 。 
+
+```
+awk '{gsub("\\.[0-9]*","",$2);print }' sorted_uniq.blast
+```
