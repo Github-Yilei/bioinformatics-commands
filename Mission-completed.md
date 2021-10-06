@@ -143,3 +143,7 @@ rename old new target.old
 ```
 awk '{print $1 "\t" $7}' specific.blast | sort -u -k 2 | sort -u -k 1,1 > sorted_uniq.blast
 ```
+## awk and sub(gsub）
+
+1. sub match the first pattern, sed 's//'
+2. gsub match all of the pattern, sed 's//g' 。 
