@@ -154,3 +154,13 @@ awk '{print $1 "\t" $7}' specific.blast | sort -u -k 2 | sort -u -k 1,1 > sorted
 ```
 awk '{gsub("\\.[0-9]*","",$2);print }' sorted_uniq.blast
 ```
+
+## statistic of gff3
+
+```
+grep $'\t'gene$'\t' input.gff3 | awk '{leng+=($5-$4)} END {print "average = " leng/NR"\t" NR}'
+
+grep $'\t'mRNA$'\t' input.gff3 | grep \\.1 | awk '{leng+=($5-$4)} END {print "average = " leng/NR"\t" NR}'
+ ```
+
+```
