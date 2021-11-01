@@ -161,6 +161,12 @@ awk '{gsub("\\.[0-9]*","",$2);print }' sorted_uniq.blast
 grep $'\t'gene$'\t' input.gff3 | awk '{leng+=($5-$4)} END {print "average = " leng/NR"\t" NR}'
 
 grep $'\t'mRNA$'\t' input.gff3 | grep \\.1 | awk '{leng+=($5-$4)} END {print "average = " leng/NR"\t" NR}'
- ```
+```
 
+## bin-freq of plink missing-stats
+
+```
+awk '{printf "%.2f\n", $5}' prefix.lmiss | awk -v OFS="\t" '{binfreq[$1]++} END{for (f in binfreq) {print "prefix", f, binfreq[f]}}' > prefix_lmiss_bin_freq.tsv
+
+awk -v OFS="\t"  '{temp = sprintf("%.2f", $5); binfreq[temp]++} END{for (f in binfreq) {print "prefix", f, binfreq[f]}}' prefix.lmiss > prefix_lmiss_bin_freq.tsv
 ```
