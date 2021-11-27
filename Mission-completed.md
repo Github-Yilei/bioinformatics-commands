@@ -170,3 +170,10 @@ awk '{printf "%.2f\n", $5}' prefix.lmiss | awk -v OFS="\t" '{binfreq[$1]++} END{
 
 awk -v OFS="\t"  '{temp = sprintf("%.2f", $5); binfreq[temp]++} END{for (f in binfreq) {print "prefix", f, binfreq[f]}}' prefix.lmiss > prefix_lmiss_bin_freq.tsv
 ```
+## Gzip open vcf.gz
+
+TypeError: startswith first arg must be bytes or a tuple of bytes, not str
+
+```
+with gzip.opener(vcf_file, "rt") as vcf:
+```
