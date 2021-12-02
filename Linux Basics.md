@@ -6,6 +6,13 @@
 
 3. Double quotation(" "): `$`, `‘`, `’`, `!`, and `\` in double quotation marks will be evaluated before display.
 
+4. Double quotation + Single quotation("'$1'"): the $1 will be interpreted as a shell command to execute in a single quotation marks.
+
+```
+id = test
+awk '{sum += $4} END {print "'${id}'" "\t" "average = " sum/NR}' test.txt
+```
+
 ## Shell
 
 This option applies to the shell environment and each subshell environment separately, and may cause shells to exit before executing all the commands in the subshell while one of the command return 'error'.
