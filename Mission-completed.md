@@ -177,3 +177,11 @@ TypeError: startswith first arg must be bytes or a tuple of bytes, not str
 ```
 with gzip.opener(vcf_file, "rt") as vcf:
 ```
+
+## Genome coverage 
+
+```
+~/miniconda3/bin/bedtools genomecov -bga -ibam  AligementOut/sample.sorted.bam > Coverage/sample.sorted.tsv
+ls Coverage | sed 's/.sorted.tsv//' | while read id ;  do echo "awk '{sum += "'$4'"} END {print sum/NR}' Coverage/${id}.sorted.tsv > Cov/${id}.cov"; done > cmd.list
+ls Cov | sed 's/.cov//' | while read id ; do awk '{print "'${id}'" "\t" $1}' Cov/${id}.cov | paste --; done > genome_coverage.tsv
+```
