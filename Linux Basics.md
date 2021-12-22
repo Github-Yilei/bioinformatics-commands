@@ -12,6 +12,9 @@
 id = test
 awk '{sum += $4} END {print "'${id}'" "\t" "average = " sum/NR}' test.txt
 ```
+## lsof
+
+**List open files**:  List all the files opened
 
 ## Shell
 
