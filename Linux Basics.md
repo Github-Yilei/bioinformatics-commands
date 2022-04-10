@@ -1,4 +1,6 @@
 https://radcamp.github.io/Marseille2020/
+https://radcamp.github.io/Marseille2020/07_momi2_API.html
+https://radcamp.github.io/AF-Biota/07_momi2_API.html
 
 ## Quotation
 
