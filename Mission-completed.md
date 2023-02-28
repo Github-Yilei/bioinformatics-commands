@@ -185,3 +185,12 @@ with gzip.opener(vcf_file, "rt") as vcf:
 ls Coverage | sed 's/.sorted.tsv//' | while read id ;  do echo "awk '{sum += "'$4'"} END {print sum/NR}' Coverage/${id}.sorted.tsv > Cov/${id}.cov"; done > cmd.list
 ls Cov | sed 's/.cov//' | while read id ; do awk '{print "'${id}'" "\t" $1}' Cov/${id}.cov | paste --; done > genome_coverage.tsv
 ```
+
+## AWK with Shell variables
+
+-v: assign a variable
+
+```
+id = "myid"
+awk -v id="${id}" '{print id"_"$1"\t"$2"\t"$3"\t"$4}' ${id}.bed
+```
