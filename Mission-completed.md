@@ -1,3 +1,24 @@
+## libstdc++.so.6: version CXXABI_1.3.8' not found
+
+Take a look of standard library in your machine
+```
+strings /lib64/libstdc++.so.6 | grep '^CXXABI_'
+```
+
+Mostly, the standard library of Ubuntu is very old. When the dynamic linker found the wrong version of the libstdc++ shared library.
+
+First, one should find the right libstdc++ in your machine.
+
+```
+strings ~/anaconda3/lib/libstdc++.so.6.0.28 | grep '^CXXABI_'
+```
+
+Then, add the library's path to the LD_LIBRARY_PATH environment variable.
+
+```
+export LD_LIBRARY_PATH=~/anaconda3/lib
+```
+
 ## Combine files
 
 Combine multi fa files useing cat. 
