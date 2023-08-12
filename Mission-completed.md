@@ -1,3 +1,6 @@
+## Displaying file names with contents when using the "cat"
+ls | grep hit.tsv | sed 's/_hit.tsv//' | while read id; do echo ${id} `cat ${id}_hit.tsv`; done >blat_stats.tsv
+
 ## libstdc++.so.6: version CXXABI_1.3.8' not found
 
 Take a look of standard library in your machine
