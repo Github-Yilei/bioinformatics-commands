@@ -79,7 +79,7 @@ qselect -u yilei | xargs qdel -W force
 ps -ef | grep job_names | awk '{print $2}' | xargs kill -9
 
 # Using PBS Variable
-```
+
 #!/bin/bash
 #PBS -N Test
 #PBS -o test.log
@@ -91,11 +91,8 @@ ps -ef | grep job_names | awk '{print $2}' | xargs kill -9
 Index=${input_idx}
 echo  ${Index} > tmp_${Index}.table
 
-##qsub -v input_idx=10 test.sh
-
 ```
-
-```
+qsub -v input_idx=10 test.sh
 
 ## top process full path
 
