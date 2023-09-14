@@ -77,6 +77,24 @@ qselect -u yilei | xargs qdel -W force
 
 # kill jobs according to job
 ps -ef | grep job_names | awk '{print $2}' | xargs kill -9
+
+# Using PBS Variable
+```
+#!/bin/bash
+#PBS -N Test
+#PBS -o test.log
+#PBS -e test.err
+#PBS -q workq
+#PBS -l nodes=1:ppn=1
+#PBS -A YL
+
+Index=${input_idx}
+echo  ${Index} > tmp_${Index}.table
+
+##qsub -v input_idx=10 test.sh
+
+```
+
 ```
 
 ## top process full path
