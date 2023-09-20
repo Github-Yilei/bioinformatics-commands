@@ -78,6 +78,10 @@ qselect -u yilei | xargs qdel -W force
 # kill jobs according to job
 ps -ef | grep job_names | awk '{print $2}' | xargs kill -9
 ```
+### detail of PBS job
+```
+pbsnodes -aSj
+```
 
 ### Using PBS Variable
 
