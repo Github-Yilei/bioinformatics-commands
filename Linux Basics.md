@@ -106,3 +106,10 @@ qsub -v input_idx=10 test.sh
 ```
 top -c
 ```
+
+## 移动硬盘挂载
+1. 记录现在所有硬盘名称：sudo fdisk -l
+2. 插入移动硬盘
+3. 挂载硬盘卷：sudo mount /dev/sdXX /path/to/dir
+4. 卸载硬盘：sudo umount /dev/sdXX
+5. 硬盘断电：sudo udisksctl power-off -b /dev/sdX
