@@ -221,3 +221,8 @@ ls Cov | sed 's/.cov//' | while read id ; do awk '{print "'${id}'" "\t" $1}' Cov
 id = "myid"
 awk -v id="${id}" '{print id"_"$1"\t"$2"\t"$3"\t"$4}' ${id}.bed
 ```
+## AWK transform cols to rows
+
+```
+ awk 'BEGIN{RS="\n"; ORS=" "}{print}END{printf("\n")}'  pop.txt
+```
