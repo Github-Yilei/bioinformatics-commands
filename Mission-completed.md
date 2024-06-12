@@ -224,5 +224,9 @@ awk -v id="${id}" '{print id"_"$1"\t"$2"\t"$3"\t"$4}' ${id}.bed
 ## AWK transform cols to rows
 
 ```
- awk 'BEGIN{RS="\n"; ORS=" "}{print}END{printf("\n")}'  pop.txt
+# col 2 row
+awk 'BEGIN{RS="\n"; ORS=" "}{print}END{printf("\n")}'  pop.txt
+
+# row 2 col
+cat t| tr '\t' '\n' > top_snp_dis.idx
 ```
